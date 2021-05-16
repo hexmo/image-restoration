@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} {% block extrahead %}
+<style>
+    .home {
+        color: #1a1d20;
+    }
+</style>
+<link rel="stylesheet" href="{% static 'css/output.css' %}" />
+<script src="{% static 'js/processor.js' %}"></script>
+{% endblock %} {% block title%} ImageR | Result {% endblock %}
+
+{% block body%}
+
+<div class="main-content">
+    <img id="processed-image" src="{{restored_image}}" alt="Restored image.">
+    <div class="button-container">
+        <a href="{{restored_image}}" download>DOWNLOAD IMAGE</a>
+        <a href="{% url 'app' %}">RESTORE ANOTHER IMAGE</a>
+
+    </div>
+</div>
+
+{% endblock %}

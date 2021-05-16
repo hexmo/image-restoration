@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="{% static 'base.css' %}" />
+
+		<link
+			rel="shortcut icon"
+			href="{% static 'logo.png' %}"
+			type="image/x-icon"
+		/>
+
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		{% block extrahead %} {% endblock %}
+		<title>{% block title%} {% endblock %}</title>
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<h2><a href="{% url 'home' %}" class="text-logo">ImageR</a></h2>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="{% url 'home' %}" class="home">Home</a></li>
+
+					{% if user.is_authenticated %}
+
+					<li><a href="{% url 'logout' %}">Logout</a></li>
+
+					<style>
+						footer {
+							border-top: 1px solid rgba(105, 116, 127, 0.29411764705882354);
+						}
+
+						header {
+							border-bottom: 1px solid rgba(105, 116, 127, 0.29411764705882354);
+						}
+					</style>
+
+					{% else %}
+
+					<li><a href="{% url 'login' %}" class="login">Login</a></li>
+					<li><a href="{% url 'signup' %}" class="signup">Signup</a></li>
+
+					{% endif %}
+				</ul>
+			</nav>
+		</header>
+		{% block body%} {% endblock %}
+
+		<footer>
+			<div class="footer-main">
+				<div>
+					<h3><a href="{% url 'home' %}" class="text-logo">ImageR</a></h3>
+					<ul>
+						<li>AI powered image restoration platform.</li>
+						<li>By - Mohit Acharya.</li>
+					</ul>
+				</div>
+				<div>
+					<h4>Important Links</h4>
+					<ul>
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'privacy' %}">Privacy</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4>Contact</h4>
+					<ul>
+						<li>
+							<a href="https://www.mohitacharya.com.np/" target="_blank">
+								mohitacharya.com.np
+							</a>
+						</li>
+						<li>hello@mohitacharya.com.np</li>
+					</ul>
+				</div>
+			</div>
+			<div class="copyright">
+				<h5>© 2021 - imageR by Mohit Acharya</h5>
+			</div>
+		</footer>
+	</body>
+</html>

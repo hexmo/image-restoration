@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} {% block extrahead %}
+<style>
+    .home {
+        color: #1a1d20;
+    }
+</style>
+<link rel="stylesheet" href="{% static 'css/processor.css' %}" />
+<script src="{% static 'js/processor.js' %}"></script>
+{% endblock %} {% block title%} ImageR | Home {% endblock %}
+
+{% block body%}
+
+<div class="main-content">
+    <img id="uploaded-image" src="">
+    <form action="result" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="dirtyPhoto">Please select your image file.</label><br>
+        <br>
+        <input type="file" accept="image/*" onchange="preview_image(event)" id="dirtyPhoto" name="dirtyPhoto" required>
+        <br>
+        <button type="submit">RESTORE THIS IMAGE</button>
+    </form>
+
+</div>
+
+{% endblock %}

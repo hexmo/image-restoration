@@ -1,0 +1,44 @@
+.home {
+	color: #1a1d20;
+}
+
+.main-content {
+	padding: 4rem 10%;
+}
+
+#sub-content-1 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#sub-content-1 img {
+	width: 100%;
+}
+
+#sub-content-1 .grid-content {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	font-weight: 400;
+}
+
+.home-heading {
+	text-align: center;
+	color: #de9244;
+}
+
+.getstarted {
+	font-weight: 400;
+	padding: 0.5rem;
+	color: #de9244;
+	text-align: center;
+	border: 2px solid #de9244;
+	border-radius: 0.5rem;
+	transition: all 0.3s ease-in-out;
+}
+
+.getstarted:hover {
+	font-weight: 700;
+	color: white;
+	background-color: #de9244;
+}

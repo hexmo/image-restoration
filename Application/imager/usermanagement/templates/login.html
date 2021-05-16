@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} {% block extrahead %}
+<style>
+	.login {
+		color: #1a1d20;
+	}
+</style>
+<link rel="stylesheet" href="{% static 'usermgmt.css' %}" />
+{% endblock %} {% block title%} ImageR | Log In{% endblock %} {% block body%}
+<section class="main-section">
+	<h1>LOGIN</h1>
+	<form action="" method="POST">
+		{% csrf_token %}
+
+		<label for="email">Email:</label><br />
+		<input type="email" name="email" id="email" required /><br />
+
+		<label for="password">Password:</label><br />
+		<input type="password" name="password" id="password" required /><br />
+		{% if pass == 'fail'%}
+		<span>User name or password error.</span><br />
+		{% endif %}
+
+		<button type="submit">Log In</button><br />
+	</form>
+</section>
+{% endblock %}

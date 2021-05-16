@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %} {% block extrahead %}
+<link rel="stylesheet" href="{% static 'home.css' %}" />
+<link rel="stylesheet" href="{% static 'home.css' %}" />
+{% endblock %} {% block title%} ImageR | Home {% endblock %}
+
+{% block body%}
+
+<div class="main-content">
+    <h1 class="home-heading">
+        How does ImageR works?
+    </h1>
+    <div id="sub-content-1">
+        <div class="grid-content">
+            <h1>Step 1: Upload your damaged image.</h1>
+        </div>
+        <div class="grid-content">
+            <img src="{% static 'upload.svg' %}" alt="Upload your damaged image">
+        </div>
+        <div class="grid-content">
+            <img src="{% static 'wait.svg' %}" alt="Servers process your image">
+        </div>
+        <div class="grid-content">
+            <h1>Step 2: Wait as our servers process your image.</h1>
+        </div>
+        <div class="grid-content">
+            <h1>Step 3: View your restored image.</h1>
+        </div>
+        <div class="grid-content">
+            <img src="{% static 'view.svg' %}" alt="View your restored image">
+        </div>
+    </div>
+
+    <h3 style="text-align: center; margin: 2rem 0;"><a class='getstarted' href="{% url 'signup' %}">GET STARTED</a></h3>
+
+</div>
+
+{% endblock %}
